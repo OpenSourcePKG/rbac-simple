@@ -1,0 +1,27 @@
+{
+  "author": "https://github.com/Choppel",
+  "bugs": {
+    "url": "https://github.com/OpenSourcePKG/rbac-simple/issues"
+  },
+  "description": "An implementation of a simple RBAC.",
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  },
+  "homepage": "https://github.com/OpenSourcePKG/rbac-simple#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "rbac-simple",
+  "scripts": {
+    "compile": "tsc --project src/tsconfig.json",
+    "npm-check-updates": "npm-check-updates",
+    "tests": "tsx tests/index.ts"
+  },
+  "version": "1.0.0"
+}
