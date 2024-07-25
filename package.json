@@ -19,7 +19,7 @@
   "main": "dist/rbac.js",
   "name": "rbac-simple",
   "scripts": {
-    "compile": "tsc --project src/tsconfig.json",
+    "compile": "rm -r dist && tsc --project src/tsconfig.json",
     "npm-check-updates": "npm-check-updates",
     "tests": "tsx tests/index.ts"
   },
