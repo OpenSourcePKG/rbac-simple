@@ -12,8 +12,9 @@ const enum Right {
   contracts_write = 'contracts_write',
   invoices = 'invoices',
   invoices_write = 'invoices_write',
-  read = 'read',
-  users = 'users'
+  invoices_read = 'invoices_read',
+  users = 'users',
+  users_read = 'users_read'
 }
 
 const rbac = new Rbac<Role, Right>([
@@ -26,17 +27,17 @@ const rbac = new Rbac<Role, Right>([
     [Right.contracts_write]: {}
   },
   [Right.invoices]: {
-    [Right.read]: {},
+    [Right.invoices_read]: {},
     [Right.invoices_write]: {}
   },
   [Right.users]: {
-    [Right.read]: {}
+    [Right.users_read]: {}
   }
 }, {
   [Role.root]: [
     Right.contracts,
     Right.invoices_write,
-    Right.read
+    Right.invoices_read
   ],
   [Role.user]: [
     Right.users
@@ -51,6 +52,11 @@ const checks: [Role, Right, boolean][] = [
   ],
   [
     Role.root,
+    Right.contracts_delete,
+    true
+  ],
+  [
+    Role.root,
     Right.invoices_write,
     true
   ],
@@ -61,8 +67,13 @@ const checks: [Role, Right, boolean][] = [
   ],
   [
     Role.root,
-    Right.read,
+    Right.invoices_read,
     true
+  ],
+  [
+    Role.root,
+    Right.users_read,
+    false
   ],
   [
     Role.user,
@@ -81,12 +92,17 @@ const checks: [Role, Right, boolean][] = [
   ],
   [
     Role.user,
-    Right.read,
+    Right.invoices_read,
     false
   ],
   [
     Role.user,
     Right.users,
+    true
+  ],
+  [
+    Role.user,
+    Right.users_read,
     true
   ]
 ];

@@ -23,5 +23,6 @@
     "npm-check-updates": "npm-check-updates",
     "tests": "tsx tests/index.ts"
   },
+  "type": "module",
   "version": "1.0.0"
 }
