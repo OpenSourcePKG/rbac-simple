@@ -1,8 +1,8 @@
 export type TRoles<R> = R[];
-export declare class Roles<R extends string> {
+export declare class Roles<Role extends string> {
     private readonly _roles;
-    constructor(_roles: TRoles<R>);
+    constructor(_roles: TRoles<Role>);
     [Symbol.iterator](): IterableIterator<string>;
-    check(_role: R): boolean;
-    getRoles(): TRoles<R>;
+    check(_role: Role): boolean;
+    getRoles(): TRoles<Role>;
 }

@@ -1,22 +1,22 @@
 import {Rights, TRights} from './rbac/rights.js';
 import {Roles, TRoles} from './rbac/roles.js';
 
-export type TAssociations = {
-  [key: string]: string[];
+export type TAssociations<Role extends string, Right extends string> = {
+  [key in Role]: Right[];
 };
 
-export class Rbac<R extends string> {
+export class Rbac<Role extends string, Right extends string> {
 
   public constructor(
-    private readonly _roles: Roles<R>,
-    private readonly _rights: Rights,
-    private readonly _associations: TAssociations
+    private readonly _roles: Roles<Role>,
+    private readonly _rights: Rights<Right>,
+    private readonly _associations: TAssociations<Role, Right>
   ) {
   }
 
   public check(
-    _role: R,
-    _right: string
+    _role: Role,
+    _right: Right
   ): boolean {
     if (!this._roles.check(_role)) {
       throw new Error(`role "${_role}" is not defined`);
@@ -37,18 +37,18 @@ export class Rbac<R extends string> {
     return false;
   }
 
-  public getAssociationsByRole(_role: string): string[] | null {
+  public getAssociationsByRole(_role: Role): Right[] | null {
     if (_role in this._associations) {
       return this._associations[_role];
     }
     return null;
   }
 
-  public getRights(): TRights {
+  public getRights(): TRights<Right> {
     return this._rights.getRights();
   }
 
-  public getRoles(): TRoles<R> {
+  public getRoles(): TRoles<Role> {
     return this._roles.getRoles();
   }
 

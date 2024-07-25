@@ -1,15 +1,15 @@
 import { Rights, TRights } from './rbac/rights.js';
 import { Roles, TRoles } from './rbac/roles.js';
-export type TAssociations = {
-    [key: string]: string[];
+export type TAssociations<Role extends string, Right extends string> = {
+    [key in Role]: Right[];
 };
-export declare class Rbac<R extends string> {
+export declare class Rbac<Role extends string, Right extends string> {
     private readonly _roles;
     private readonly _rights;
     private readonly _associations;
-    constructor(_roles: Roles<R>, _rights: Rights, _associations: TAssociations);
-    check(_role: R, _right: string): boolean;
-    getAssociationsByRole(_role: string): string[] | null;
-    getRights(): TRights;
-    getRoles(): TRoles<R>;
+    constructor(_roles: Roles<Role>, _rights: Rights<Right>, _associations: TAssociations<Role, Right>);
+    check(_role: Role, _right: Right): boolean;
+    getAssociationsByRole(_role: Role): Right[] | null;
+    getRights(): TRights<Right>;
+    getRoles(): TRoles<Role>;
 }

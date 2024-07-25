@@ -8,12 +8,13 @@ class Rights {
     }
     check(_right) {
         return this.traverse(_right, this._rights, () => {
-            return true;
+            return [true];
         }, (_rights) => {
             return Boolean(_rights);
         }, () => {
-            return true;
-        }, false);
+            return [true];
+        }, [false])
+            .every((_val) => _val);
     }
     getPossibleRights(_right) {
         return this.traverse(_right, this._rights, (_right2) => {
@@ -36,7 +37,7 @@ class Rights {
                 return _rightCb(right);
             }
             const subRights = _rights[right];
-            if (typeof subRights !== 'string' && Object.keys(subRights).length > 0) {
+            if (subRights && Object.keys(subRights).length > 0) {
                 const result = this.traverse(_right, subRights, _rightCb, _rightsCheckCb, _rightsCb, _default);
                 if (_rightsCheckCb(result)) {
                     return _rightsCb(right, result);

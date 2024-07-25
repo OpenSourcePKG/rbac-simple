@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/OpenSourcePKG/rbac-simple#readme",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/rbac.js",
   "name": "rbac-simple",
   "scripts": {
     "compile": "tsc --project src/tsconfig.json",
