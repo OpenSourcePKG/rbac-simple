@@ -1,13 +1,11 @@
 rbac-simple is an implementation of a simple RBAC.
 
-## Installation
-
 ### Prerequisites
 
 - NodeJS 20
-- Vts is an ES module: You will need to upgrade your project configuration accordingly.
+- rbac-simple is an ES module: You will need to upgrade your project configuration accordingly.
 
-### Vts
+### Installation
 
 `npm i --save https://github.com/OpenSourcePKG/rbac-simple`
 
