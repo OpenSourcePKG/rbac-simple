@@ -11,9 +11,8 @@ rbac-simple is an implementation of a simple RBAC.
 
 ### Usage
 
-Firstly you should define all roles and rights in two separate enums.
-(Internally the roles and rights are strings. So you don't actually have to define them
-via enums. But it makes the whole thing a lot easier to use.)
+If the roles and rights are static, you should define all roles and rights in two separate enums.
+Internally the roles and rights are strings. So you could also feed rbac-simple with data from a database.
 
 ````
 import {Rbac} from '../src/rbac.js';
@@ -85,5 +84,5 @@ if (myRbac.checkAccess(Role.root, Right.users)) {
 ### Nested rights
 
 rbac-simple supports nested rights so if a role has a right it automatically has all sub rights.
-For instance in the above example the role `root` has the right `Right.contracts`. Checking the access
-role `root` and right `Right.contracts_delete` or `Right.contracts_write` will return true.
+For instance in the above example the role `root` has the right `Right.contracts`. Checking the
+right `Right.contracts_delete` or `Right.contracts_write` for role `root` will return true.
