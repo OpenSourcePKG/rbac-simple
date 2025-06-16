@@ -14,7 +14,25 @@
     "tsx": "^4.16.2",
     "typescript": "^5.5.4"
   },
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "homepage": "https://github.com/OpenSourcePKG/rbac-simple#readme",
+  "keywords": [
+    "nodejs",
+    "rights",
+    "typescript",
+    "acl",
+    "roles"
+  ],
   "license": "MIT",
   "main": "dist/rbac.js",
   "name": "rbac-simple",
@@ -24,5 +42,6 @@
     "tests": "tsx tests/index.ts"
   },
   "type": "module",
+  "types": "./dist/rbac.d.ts",
   "version": "1.0.0"
 }

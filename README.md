@@ -1,4 +1,17 @@
-rbac-simple is an implementation of a simple RBAC.
+![Version](https://img.shields.io/badge/Version-1.0.0-blue)
+![Node.js >=20](https://img.shields.io/badge/Node.js-%3E%3D20-brightgreen)
+![type: module](https://img.shields.io/badge/type-module-orange)
+![ESM Only](https://img.shields.io/badge/Module-ESM--only-success)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/OpenSourcePKG/rbac-simple)
+
+# rbac-simple
+<p align="center">
+<img src="doc/images/logo.png" width="300px" style="border-radius: 15px;transition: transform .2s;object-fit: cover;">
+<br><br>
+rbac-simple is an implementation of a simple RBAC, a Role-Based Access Control (RBAC) system with hierarchical permissions support. The library is designed as a lightweight, zero-dependency solution for implementing access control in Node.js applications.
+</p>
+
+
 
 ### Prerequisites
 
