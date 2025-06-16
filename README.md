@@ -20,7 +20,9 @@ rbac-simple is an implementation of a simple RBAC, a Role-Based Access Control (
 
 ### Installation
 
-`npm i --save https://github.com/OpenSourcePKG/rbac-simple`
+```bash
+npm i --save https://github.com/OpenSourcePKG/rbac-simple
+```
 
 ### Usage
 

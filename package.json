@@ -20,9 +20,9 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/rbac.js",
+      "require": "./dist/rbac.js",
+      "types": "./dist/rbac.d.ts"
     }
   },
   "homepage": "https://github.com/OpenSourcePKG/rbac-simple#readme",
@@ -34,7 +34,6 @@
     "roles"
   ],
   "license": "MIT",
-  "main": "dist/rbac.js",
   "name": "rbac-simple",
   "scripts": {
     "compile": "rm -r dist && tsc --project src/tsconfig.json",
