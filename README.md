@@ -27,7 +27,7 @@ rbac-simple is an implementation of a simple RBAC, a Role-Based Access Control (
 If the roles and rights are static, you should define all roles and rights in two separate enums.
 Internally the roles and rights are strings. So you could also feed rbac-simple with data from a database.
 
-````
+````typescript
 import {Rbac} from '../src/rbac.js';
 
 // define all roles
@@ -86,7 +86,7 @@ const myRbac = new Rbac<Role, Right>(
 ````
 
 You can now use `myRbac` to check if a role has a specific right like
-````
+````typescript
 if (myRbac.checkAccess(Role.root, Right.users)) {
   // do the thing
 } else {
