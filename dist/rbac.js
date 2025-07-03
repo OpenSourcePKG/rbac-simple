@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Rbac = void 0;
-class Rbac {
+export class Rbac {
     _roles;
     _rights;
     _associations;
@@ -66,4 +63,3 @@ class Rbac {
         return _default;
     }
 }
-exports.Rbac = Rbac;
